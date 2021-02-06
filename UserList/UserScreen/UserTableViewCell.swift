@@ -8,11 +8,13 @@
 import UIKit
 
 class UserTableViewCell: UITableViewCell {
+    var model: User?
     var userView: UserView?
     let showPostsButton = UIButton()
     weak var delegate: ViewControllerDelegate?
 
     func setupView(model: User) {
+        self.model = model
         userView = UserView()
         userView?.setupView(name: model.name, phone: model.phone, email: model.email)
 
@@ -42,6 +44,6 @@ class UserTableViewCell: UITableViewCell {
     }
 
     @objc private func didTapShowPostsButton() {
-        delegate?.navigate()
+        delegate?.navigate(to: self.model)
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 
 protocol ViewControllerDelegate where Self: UIViewController {
     func reloadData()
-    func navigate()
+    func navigate(to user: User?)
 }
 
 class UserViewModel: NSObject {

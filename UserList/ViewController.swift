@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         viewModel.delegate = self
         searchBar.delegate = viewModel
         viewModel.fetchUsers()
-
+        view.backgroundColor = .white
         setupSearchBar()
         setupTableView()
     }
@@ -79,7 +79,11 @@ extension ViewController: ViewControllerDelegate {
         }
     }
 
-    func navigate() {
-        print("PUSH")
+    func navigate(to user: User?) {
+        guard let user = user else {
+            return
+        }
+
+        self.navigationController?.pushViewController(UserPostsViewController(user), animated: true)
     }
 }
