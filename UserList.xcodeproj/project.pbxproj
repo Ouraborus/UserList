@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C91F30DD25CEFF1F00186DD9 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F30DC25CEFF1F00186DD9 /* RequestManager.swift */; };
+		C91F30E525CF018A00186DD9 /* ServiceMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F30E425CF018A00186DD9 /* ServiceMethod.swift */; };
+		C91F30EB25CF031000186DD9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F30EA25CF031000186DD9 /* User.swift */; };
+		C91F30F325CF05CB00186DD9 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F30F225CF05CB00186DD9 /* ServiceError.swift */; };
+		C91F310525CF096000186DD9 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F310425CF096000186DD9 /* UserViewModel.swift */; };
+		C91F310C25CF0A2B00186DD9 /* RequestManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F310B25CF0A2B00186DD9 /* RequestManagerProtocol.swift */; };
+		C91F311425CF175500186DD9 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F311325CF175400186DD9 /* UserTableViewCell.swift */; };
+		C91F311925CF17EF00186DD9 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F311825CF17EF00186DD9 /* UserView.swift */; };
 		C995A00D25CEFA1300A42A16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995A00C25CEFA1300A42A16 /* AppDelegate.swift */; };
 		C995A00F25CEFA1300A42A16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995A00E25CEFA1300A42A16 /* SceneDelegate.swift */; };
 		C995A01125CEFA1300A42A16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995A01025CEFA1300A42A16 /* ViewController.swift */; };
@@ -35,6 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C91F30DC25CEFF1F00186DD9 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		C91F30E425CF018A00186DD9 /* ServiceMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMethod.swift; sourceTree = "<group>"; };
+		C91F30EA25CF031000186DD9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C91F30F225CF05CB00186DD9 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		C91F310425CF096000186DD9 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		C91F310B25CF0A2B00186DD9 /* RequestManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManagerProtocol.swift; sourceTree = "<group>"; };
+		C91F311325CF175400186DD9 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		C91F311825CF17EF00186DD9 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		C995A00925CEFA1300A42A16 /* UserList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C995A00C25CEFA1300A42A16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C995A00E25CEFA1300A42A16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +101,44 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		C91F30DB25CEFECE00186DD9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C91F310A25CF0A1200186DD9 /* RequestManager */,
+				C91F30E425CF018A00186DD9 /* ServiceMethod.swift */,
+				C91F30F225CF05CB00186DD9 /* ServiceError.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C91F310025CF08B100186DD9 /* UserScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C91F30EA25CF031000186DD9 /* User.swift */,
+				C91F310425CF096000186DD9 /* UserViewModel.swift */,
+				C91F311325CF175400186DD9 /* UserTableViewCell.swift */,
+				C91F311825CF17EF00186DD9 /* UserView.swift */,
+			);
+			path = UserScreen;
+			sourceTree = "<group>";
+		};
+		C91F310A25CF0A1200186DD9 /* RequestManager */ = {
+			isa = PBXGroup;
+			children = (
+				C91F30DC25CEFF1F00186DD9 /* RequestManager.swift */,
+				C91F310B25CF0A2B00186DD9 /* RequestManagerProtocol.swift */,
+			);
+			path = RequestManager;
+			sourceTree = "<group>";
+		};
+		C91F312C25CF2EBF00186DD9 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				C995A01525CEFA1300A42A16 /* UserList.xcdatamodeld */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		C995A00025CEFA1300A42A16 = {
 			isa = PBXGroup;
 			children = (
@@ -107,12 +161,14 @@
 		C995A00B25CEFA1300A42A16 /* UserList */ = {
 			isa = PBXGroup;
 			children = (
+				C91F312C25CF2EBF00186DD9 /* Persistence */,
+				C91F310025CF08B100186DD9 /* UserScreen */,
+				C91F30DB25CEFECE00186DD9 /* Services */,
 				C91F30D425CEFDDC00186DD9 /* Storyboards */,
 				C995A00C25CEFA1300A42A16 /* AppDelegate.swift */,
 				C995A00E25CEFA1300A42A16 /* SceneDelegate.swift */,
 				C995A01025CEFA1300A42A16 /* ViewController.swift */,
 				C995A01D25CEFA1600A42A16 /* Info.plist */,
-				C995A01525CEFA1300A42A16 /* UserList.xcdatamodeld */,
 			);
 			path = UserList;
 			sourceTree = "<group>";
@@ -256,10 +312,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C91F30F325CF05CB00186DD9 /* ServiceError.swift in Sources */,
+				C91F30E525CF018A00186DD9 /* ServiceMethod.swift in Sources */,
+				C91F311425CF175500186DD9 /* UserTableViewCell.swift in Sources */,
+				C91F30DD25CEFF1F00186DD9 /* RequestManager.swift in Sources */,
 				C995A01725CEFA1300A42A16 /* UserList.xcdatamodeld in Sources */,
 				C995A01125CEFA1300A42A16 /* ViewController.swift in Sources */,
 				C995A00D25CEFA1300A42A16 /* AppDelegate.swift in Sources */,
+				C91F311925CF17EF00186DD9 /* UserView.swift in Sources */,
 				C995A00F25CEFA1300A42A16 /* SceneDelegate.swift in Sources */,
+				C91F310525CF096000186DD9 /* UserViewModel.swift in Sources */,
+				C91F30EB25CF031000186DD9 /* User.swift in Sources */,
+				C91F310C25CF0A2B00186DD9 /* RequestManagerProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
