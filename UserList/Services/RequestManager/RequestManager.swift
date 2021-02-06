@@ -28,12 +28,7 @@ class RequestManager: RequestManagerProtocol {
                 return
             }
 
-            guard let users = try? JSONDecoder().decode([User].self, from: data) else {
-                completion(.failure(.unableToParse))
-                return
-            }
-
-            completion(.success(users))
+            completion(.success(data))
         }
 
         task.resume()

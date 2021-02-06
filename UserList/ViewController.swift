@@ -17,11 +17,10 @@ class ViewController: UIViewController {
     private var searchBar = UISearchBar()
     private var tableView = UITableView()
 
-    let viewModel = UserViewModel(requestManager: RequestManager.self)
+    let viewModel = UserViewModel(requestManager: RequestManager.self, persistenceManager: PersistenceManager.self)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         viewModel.delegate = self
         viewModel.fetchUsers()
 

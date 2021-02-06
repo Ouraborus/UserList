@@ -13,20 +13,35 @@ protocol ViewControllerDelegate where Self: UIViewController {
 }
 
 class UserViewModel {
-
-    let requestManager: RequestManagerProtocol.Type
+    private let requestManager: RequestManagerProtocol.Type
+    private let persistenceManager: PersistenceManagerProtocol.Type
     weak var delegate: ViewControllerDelegate?
-    var users: [User]?
+    private(set) var users: [User]?
 
-    init(requestManager: RequestManagerProtocol.Type) {
+    init(requestManager: RequestManagerProtocol.Type, persistenceManager: PersistenceManagerProtocol.Type) {
         self.requestManager = requestManager
+        self.persistenceManager = persistenceManager
     }
 
     func fetchUsers() {
-        requestManager.getUsers { [weak self] result in
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+
+        let context = appDelegate.persistentContainer.viewContext
+        let users = persistenceManager.retrieve(context: context, filter: nil)
+
+        guard users.isEmpty else {
+            self.users = users
+            delegate?.reloadData()
+            return
+        }
+
+        requestManager.getUsers() { [weak self] result in
             switch result {
-            case .success(let users):
-                self?.users = users
+            case .success(let data):
+                self?.persistenceManager.save(data: data, context: context)
+                self?.users = self?.persistenceManager.retrieve(context: context, filter: nil)
                 self?.delegate?.reloadData()
             case .failure(let error):
                 print(error)

@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import CoreData
 
 protocol RequestManagerProtocol {
-    typealias UserResponse = (Result<[User], ServiceError>) -> Void
+    typealias UserResponse = (Result<Data, ServiceError>) -> Void
     typealias UserPostsResponse = (Result<[User], ServiceError>) -> Void
 
     static func getUsers(completion: @escaping UserResponse)
