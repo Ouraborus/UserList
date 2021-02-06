@@ -10,9 +10,10 @@ import UIKit
 
 protocol ViewControllerDelegate where Self: UIViewController {
     func reloadData()
+    func navigate()
 }
 
-class UserViewModel {
+class UserViewModel: NSObject {
     private let requestManager: RequestManagerProtocol.Type
     private let persistenceManager: PersistenceManagerProtocol.Type
     weak var delegate: ViewControllerDelegate?
@@ -47,5 +48,21 @@ class UserViewModel {
                 print(error)
             }
         }
+    }
+
+    private func filterUsers(with filter: String) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+
+        let context = appDelegate.persistentContainer.viewContext
+        users = persistenceManager.retrieve(context: context, filter: filter)
+    }
+}
+
+extension UserViewModel: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filterUsers(with: searchText)
+        delegate?.reloadData()
     }
 }

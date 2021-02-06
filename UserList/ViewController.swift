@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
+        searchBar.delegate = viewModel
         viewModel.fetchUsers()
 
         setupSearchBar()
@@ -66,6 +67,7 @@ extension ViewController: UITableViewDataSource {
 
         let cell = UserTableViewCell()
         cell.setupView(model: user)
+        cell.delegate = self
         return cell
     }
 }
@@ -76,5 +78,8 @@ extension ViewController: ViewControllerDelegate {
             self?.tableView.reloadData()
         }
     }
-}
 
+    func navigate() {
+        print("PUSH")
+    }
+}
