@@ -18,7 +18,6 @@ final class PersistenceManager: PersistenceManagerProtocol {
             return
         }
 
-
         let decoder = JSONDecoder()
         decoder.userInfo[codingUserInfoKey] = context
 
