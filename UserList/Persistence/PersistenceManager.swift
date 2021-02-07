@@ -11,6 +11,7 @@ import CoreData
 final class PersistenceManager: PersistenceManagerProtocol {
     private struct Constants {
         static let entityName = "User"
+        static let namePredicateFormat = "name CONTAINS %@"
     }
     
     static func save(data: Data, context: NSManagedObjectContext) {
@@ -29,12 +30,11 @@ final class PersistenceManager: PersistenceManagerProtocol {
         }
     }
 
-
     static func retrieve(context: NSManagedObjectContext, filter: String?) -> [User] {
         var cachedUsers: [User] = []
 
         let request = NSFetchRequest<NSManagedObject>(entityName: Constants.entityName)
-        request.predicate = (filter?.isEmpty ?? true) ? nil : NSPredicate(format: "name CONTAINS %@", filter ?? "")
+        request.predicate = (filter?.isEmpty ?? true) ? nil : NSPredicate(format: Constants.namePredicateFormat, filter ?? "")
 
         do {
             cachedUsers = try context.fetch(request) as? [User] ?? []

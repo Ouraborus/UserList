@@ -14,8 +14,8 @@ protocol UserPostsViewControllerDelegate where Self: UIViewController {
 
 class UserPostsViewModel {
     private let requestManager: RequestManagerProtocol.Type
-    let user: User
     private(set) var posts: [UserPost]?
+    let user: User
     weak var delegate: UserPostsViewControllerDelegate?
 
     init(user: User, requestManager: RequestManagerProtocol.Type) {
