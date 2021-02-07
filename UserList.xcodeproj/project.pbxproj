@@ -30,7 +30,7 @@
 		C91F314725CF607300186DD9 /* UserEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F314625CF607300186DD9 /* UserEmptyView.swift */; };
 		C995A00D25CEFA1300A42A16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995A00C25CEFA1300A42A16 /* AppDelegate.swift */; };
 		C995A00F25CEFA1300A42A16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995A00E25CEFA1300A42A16 /* SceneDelegate.swift */; };
-		C995A01125CEFA1300A42A16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995A01025CEFA1300A42A16 /* ViewController.swift */; };
+		C995A01125CEFA1300A42A16 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995A01025CEFA1300A42A16 /* UsersViewController.swift */; };
 		C995A01725CEFA1300A42A16 /* UserList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C995A01525CEFA1300A42A16 /* UserList.xcdatamodeld */; };
 		C995A01925CEFA1600A42A16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C995A01825CEFA1600A42A16 /* Assets.xcassets */; };
 		C995A01C25CEFA1600A42A16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C995A01A25CEFA1600A42A16 /* LaunchScreen.storyboard */; };
@@ -78,7 +78,7 @@
 		C995A00925CEFA1300A42A16 /* UserList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C995A00C25CEFA1300A42A16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C995A00E25CEFA1300A42A16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C995A01025CEFA1300A42A16 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C995A01025CEFA1300A42A16 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		C995A01625CEFA1300A42A16 /* UserList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserList.xcdatamodel; sourceTree = "<group>"; };
 		C995A01825CEFA1600A42A16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C995A01B25CEFA1600A42A16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -184,6 +184,7 @@
 		C91F310025CF08B100186DD9 /* UserScreen */ = {
 			isa = PBXGroup;
 			children = (
+				C995A01025CEFA1300A42A16 /* UsersViewController.swift */,
 				C91F30EA25CF031000186DD9 /* User.swift */,
 				C91F310425CF096000186DD9 /* UserViewModel.swift */,
 				C91F311325CF175400186DD9 /* UserTableViewCell.swift */,
@@ -248,7 +249,6 @@
 				C995A01D25CEFA1600A42A16 /* Info.plist */,
 				C995A00C25CEFA1300A42A16 /* AppDelegate.swift */,
 				C995A00E25CEFA1300A42A16 /* SceneDelegate.swift */,
-				C995A01025CEFA1300A42A16 /* ViewController.swift */,
 				C91F312C25CF2EBF00186DD9 /* Persistence */,
 				C91F30DB25CEFECE00186DD9 /* Services */,
 				C91F30D425CEFDDC00186DD9 /* Storyboards */,
@@ -413,7 +413,7 @@
 				C995A01725CEFA1300A42A16 /* UserList.xcdatamodeld in Sources */,
 				C91F314725CF607300186DD9 /* UserEmptyView.swift in Sources */,
 				C91F313125CF39F900186DD9 /* PersistenceManager.swift in Sources */,
-				C995A01125CEFA1300A42A16 /* ViewController.swift in Sources */,
+				C995A01125CEFA1300A42A16 /* UsersViewController.swift in Sources */,
 				C995A00D25CEFA1300A42A16 /* AppDelegate.swift in Sources */,
 				C91D7B3825D0485B0028CE13 /* UserPost.swift in Sources */,
 				C91F311925CF17EF00186DD9 /* UserView.swift in Sources */,
