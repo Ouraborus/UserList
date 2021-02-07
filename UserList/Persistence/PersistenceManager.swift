@@ -60,7 +60,7 @@ final class PersistenceManager: PersistenceManagerProtocol {
 
                 context.delete(object)
             }
-        } catch let error {
+        } catch {
             // Throw Error
         }
     }

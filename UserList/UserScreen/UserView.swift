@@ -9,9 +9,9 @@ import UIKit
 
 class UserView: UIView {
 
-    let nameLabel = UILabel()
-    let phoneLabel = UILabel()
-    let emailLabel = UILabel()
+    private let nameLabel = UILabel()
+    private let phoneLabel = UILabel()
+    private let emailLabel = UILabel()
 
     func setupView(name: String, phone: String, email: String) {
         nameLabel.text = name

@@ -86,7 +86,10 @@ extension ViewController: ViewControllerDelegate {
             return
         }
 
-        self.navigationController?.pushViewController(UserPostsViewController(user), animated: true)
+        let viewModel = UserPostsViewModel(user: user, requestManager: RequestManager.self)
+        let viewController = UserPostsViewController(viewModel: viewModel)
+
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     func setEmptyListVisibility(_ isVisible: Bool) {
