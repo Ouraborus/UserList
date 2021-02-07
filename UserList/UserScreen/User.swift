@@ -9,11 +9,13 @@ import Foundation
 import CoreData
 
 class User: NSManagedObject, Codable {
+    @NSManaged var id: Int
     @NSManaged var name: String
     @NSManaged var phone: String
     @NSManaged var email: String
 
     enum CodingKeys: String, CodingKey {
+        case id
         case name
         case phone
         case email
@@ -32,6 +34,7 @@ class User: NSManagedObject, Codable {
         self.init(entity: entity, insertInto: context)
 
         let values = try decoder.container(keyedBy: CodingKeys.self)
+        id = try values.decode(Int.self, forKey: .id)
         name = try values.decode(String.self, forKey: .name)
         phone = try values.decode(String.self, forKey: .phone)
         email = try values.decode(String.self, forKey: .email)
@@ -39,6 +42,7 @@ class User: NSManagedObject, Codable {
 
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(name, forKey: .id)
         try container.encode(name, forKey: .name)
         try container.encode(phone, forKey: .phone)
         try container.encode(email, forKey: .email)
