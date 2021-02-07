@@ -40,6 +40,8 @@ class UserView: UIView {
 
         let phoneIcon = UIImageView(image: UIImage(systemName: Constants.phoneIconCode))
         let emailIcon = UIImageView(image: UIImage(systemName: Constants.emailIconCode))
+        phoneIcon.tintColor = .purple
+        emailIcon.tintColor = .purple
 
         addSubview(nameLabel)
         addSubview(phoneLabel)

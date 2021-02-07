@@ -8,6 +8,17 @@
 import UIKit
 
 class UserPostsTableViewCell: UITableViewCell {
+
+    private struct Constants {
+        static let titleTopAnchor: CGFloat = 10
+        static let titleLeadingAnchor: CGFloat = 15
+        static let titleTrailingAnchor: CGFloat = -15
+        static let bodyTopAnchor: CGFloat = 10
+        static let bodyLeadingAnchor: CGFloat = 15
+        static let bodyTrailingAnchor: CGFloat = -15
+        static let bodyBottomAnchor: CGFloat = -10
+    }
+
     var title = UILabel()
     var body = UILabel()
 
@@ -21,14 +32,17 @@ class UserPostsTableViewCell: UITableViewCell {
         title.translatesAutoresizingMaskIntoConstraints = false
         body.translatesAutoresizingMaskIntoConstraints = false
 
-        title.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor).isActive = true
-        title.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        title.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        title.numberOfLines = 0
+        body.numberOfLines = 0
 
-        body.topAnchor.constraint(equalTo: title.bottomAnchor).isActive = true
-        body.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        body.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        body.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        title.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: Constants.titleTopAnchor).isActive = true
+        title.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: Constants.titleLeadingAnchor).isActive = true
+        title.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: Constants.titleTrailingAnchor).isActive = true
+
+        body.topAnchor.constraint(equalTo: title.bottomAnchor, constant: Constants.bodyTopAnchor).isActive = true
+        body.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.bodyLeadingAnchor).isActive = true
+        body.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: Constants.bodyTrailingAnchor).isActive = true
+        body.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: Constants.bodyBottomAnchor).isActive = true
     }
 
 }
