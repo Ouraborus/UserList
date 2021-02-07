@@ -27,6 +27,8 @@ class UserView: UIView {
         static let phoneIconCode = "phone.circle.fill"
         static let emailIconCode = "envelope.circle.fill"
         static let iconSize: CGFloat = 30
+        static let titleFont: UIFont? = UIFont(name: "Futura", size: 24)
+        static let font: UIFont? = UIFont(name: "Futura", size: 18)
     }
 
     private let nameLabel = UILabel()
@@ -36,7 +38,7 @@ class UserView: UIView {
     func setupView(name: String, phone: String, email: String) {
         nameLabel.text = name
         phoneLabel.text = phone
-        emailLabel.text = email
+        emailLabel.text = email.lowercased()
 
         let phoneIcon = UIImageView(image: UIImage(systemName: Constants.phoneIconCode))
         let emailIcon = UIImageView(image: UIImage(systemName: Constants.emailIconCode))
@@ -55,9 +57,11 @@ class UserView: UIView {
         phoneIcon.translatesAutoresizingMaskIntoConstraints = false
         emailIcon.translatesAutoresizingMaskIntoConstraints = false
 
+        nameLabel.font = Constants.titleFont
         nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: Constants.nameLabelTopAnchor).isActive = true
         nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.nameLabelLeadingAnchor).isActive = true
         nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: Constants.nameLabelTrailingAnchor).isActive = true
+        nameLabel.textAlignment = .center
 
         phoneIcon.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: Constants.phoneIconTopAnchor).isActive = true
         phoneIcon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.phoneIconLeadingAnchor).isActive = true
@@ -67,6 +71,7 @@ class UserView: UIView {
         phoneLabel.centerYAnchor.constraint(equalTo: phoneIcon.centerYAnchor).isActive = true
         phoneLabel.leadingAnchor.constraint(equalTo: phoneIcon.trailingAnchor, constant: Constants.phoneLabelLeadingAnchor).isActive = true
         phoneLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: Constants.nameLabelTrailingAnchor).isActive = true
+        phoneLabel.font = Constants.font
 
         emailIcon.topAnchor.constraint(equalTo: phoneIcon.bottomAnchor, constant: Constants.emailIconTopAnchor).isActive = true
         emailIcon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.emailIconLeadingAnchor).isActive = true
@@ -74,8 +79,9 @@ class UserView: UIView {
         emailIcon.heightAnchor.constraint(equalToConstant: Constants.iconSize).isActive = true
 
         emailLabel.centerYAnchor.constraint(equalTo: emailIcon.centerYAnchor).isActive = true
-        emailLabel.leadingAnchor.constraint(equalTo: emailIcon.trailingAnchor, constant: Constants.emailIconLeadingAnchor).isActive = true
+        emailLabel.leadingAnchor.constraint(equalTo: emailIcon.trailingAnchor, constant: Constants.emailLabelLeadingAnchor).isActive = true
         emailLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: Constants.emailLabelTrailingAnchor).isActive = true
         emailLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: Constants.emailLabelBottomAnchor).isActive = true
+        emailLabel.font = Constants.font
     }
 }
