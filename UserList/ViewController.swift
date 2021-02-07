@@ -16,6 +16,7 @@ class ViewController: UIViewController {
 
     private var searchBar = UISearchBar()
     private var tableView = UITableView()
+    private var emptyView = UserEmptyView()
 
     let viewModel = UserViewModel(requestManager: RequestManager.self, persistenceManager: PersistenceManager.self)
 
@@ -85,5 +86,28 @@ extension ViewController: ViewControllerDelegate {
         }
 
         self.navigationController?.pushViewController(UserPostsViewController(user), animated: true)
+    }
+    
+    func setEmptyListVisibility(_ isVisible: Bool) {
+        guard tableView.isHidden != isVisible else {
+            return
+        }
+        
+        if isVisible {
+            emptyView = UserEmptyView()
+            view.addSubview(emptyView)
+            emptyView.setupView()
+            emptyView.translatesAutoresizingMaskIntoConstraints = false
+            
+            emptyView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+            emptyView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+            emptyView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+            emptyView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+            
+        } else {
+            emptyView.removeFromSuperview()
+        }
+        
+        tableView.isHidden = isVisible
     }
 }

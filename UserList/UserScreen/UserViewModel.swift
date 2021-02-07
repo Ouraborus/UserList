@@ -11,6 +11,7 @@ import UIKit
 protocol ViewControllerDelegate where Self: UIViewController {
     func reloadData()
     func navigate(to user: User?)
+    func setEmptyListVisibility(_ isVisible: Bool)
 }
 
 class UserViewModel: NSObject {
@@ -57,6 +58,15 @@ class UserViewModel: NSObject {
 
         let context = appDelegate.persistentContainer.viewContext
         users = persistenceManager.retrieve(context: context, filter: filter)
+
+
+        guard let users = users, !users.isEmpty else {
+            delegate?.setEmptyListVisibility(true)
+            return
+        }
+
+        delegate?.setEmptyListVisibility(false)
+
     }
 }
 

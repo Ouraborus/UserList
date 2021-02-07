@@ -18,6 +18,7 @@
 		C91F313125CF39F900186DD9 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F313025CF39F900186DD9 /* PersistenceManager.swift */; };
 		C91F313625CF3A0D00186DD9 /* PersistenceManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F313525CF3A0D00186DD9 /* PersistenceManagerProtocol.swift */; };
 		C91F313C25CF5ADD00186DD9 /* UserPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F313B25CF5ADD00186DD9 /* UserPostsViewController.swift */; };
+		C91F314725CF607300186DD9 /* UserEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F314625CF607300186DD9 /* UserEmptyView.swift */; };
 		C995A00D25CEFA1300A42A16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995A00C25CEFA1300A42A16 /* AppDelegate.swift */; };
 		C995A00F25CEFA1300A42A16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995A00E25CEFA1300A42A16 /* SceneDelegate.swift */; };
 		C995A01125CEFA1300A42A16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995A01025CEFA1300A42A16 /* ViewController.swift */; };
@@ -56,6 +57,7 @@
 		C91F313025CF39F900186DD9 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		C91F313525CF3A0D00186DD9 /* PersistenceManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManagerProtocol.swift; sourceTree = "<group>"; };
 		C91F313B25CF5ADD00186DD9 /* UserPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsViewController.swift; sourceTree = "<group>"; };
+		C91F314625CF607300186DD9 /* UserEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEmptyView.swift; sourceTree = "<group>"; };
 		C995A00925CEFA1300A42A16 /* UserList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C995A00C25CEFA1300A42A16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C995A00E25CEFA1300A42A16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				C91F310425CF096000186DD9 /* UserViewModel.swift */,
 				C91F311325CF175400186DD9 /* UserTableViewCell.swift */,
 				C91F311825CF17EF00186DD9 /* UserView.swift */,
+				C91F314625CF607300186DD9 /* UserEmptyView.swift */,
 			);
 			path = UserScreen;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				C91F311425CF175500186DD9 /* UserTableViewCell.swift in Sources */,
 				C91F30DD25CEFF1F00186DD9 /* RequestManager.swift in Sources */,
 				C995A01725CEFA1300A42A16 /* UserList.xcdatamodeld in Sources */,
+				C91F314725CF607300186DD9 /* UserEmptyView.swift in Sources */,
 				C91F313125CF39F900186DD9 /* PersistenceManager.swift in Sources */,
 				C995A01125CEFA1300A42A16 /* ViewController.swift in Sources */,
 				C995A00D25CEFA1300A42A16 /* AppDelegate.swift in Sources */,
