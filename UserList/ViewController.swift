@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     private var searchBar = UISearchBar()
     private var tableView = UITableView()
     private var emptyView = UserEmptyView()
+    private var activityIndicator = UIActivityIndicatorView()
 
     let viewModel = UserViewModel(requestManager: RequestManager.self, persistenceManager: PersistenceManager.self)
 
@@ -109,5 +110,30 @@ extension ViewController: ViewControllerDelegate {
         }
         
         tableView.isHidden = isVisible
+    }
+
+    func starLoader() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {
+                return
+            }
+
+            self.activityIndicator.style = .large
+            self.activityIndicator.color = .purple
+
+            self.view.addSubview(self.activityIndicator)
+            self.activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+
+            self.activityIndicator.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+            self.activityIndicator.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+            self.activityIndicator.startAnimating()
+        }
+    }
+
+    func stopLoader() {
+        DispatchQueue.main.async { [weak self] in
+            self?.activityIndicator.stopAnimating()
+            self?.activityIndicator.removeFromSuperview()
+        }
     }
 }

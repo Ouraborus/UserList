@@ -12,6 +12,8 @@ protocol ViewControllerDelegate where Self: UIViewController {
     func reloadData()
     func navigate(to user: User?)
     func setEmptyListVisibility(_ isVisible: Bool)
+    func starLoader()
+    func stopLoader()
 }
 
 class UserViewModel: NSObject {
@@ -26,7 +28,9 @@ class UserViewModel: NSObject {
     }
 
     func fetchUsers() {
+        delegate?.starLoader()
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            delegate?.stopLoader()
             return
         }
 
@@ -35,6 +39,7 @@ class UserViewModel: NSObject {
 
         guard users.isEmpty else {
             self.users = users
+            delegate?.stopLoader()
             delegate?.reloadData()
             return
         }
@@ -48,6 +53,8 @@ class UserViewModel: NSObject {
             case .failure(let error):
                 print(error)
             }
+
+            self?.delegate?.stopLoader()
         }
     }
 
